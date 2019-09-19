@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='ClassLoaderDemo'
+rootProject.name='HotFixDemo'
