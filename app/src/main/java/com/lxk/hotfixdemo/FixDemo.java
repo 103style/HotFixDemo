@@ -1,9 +1,9 @@
-package com.lxk.classloaderdemo;
+package com.lxk.hotfixdemo;
 
 import android.content.Context;
 
-import com.lxk.classloaderdemo.test.MyConstants;
-import com.lxk.classloaderdemo.utils.ReflectUtils;
+import com.lxk.hotfixdemo.test.MyConstants;
+import com.lxk.hotfixdemo.utils.ReflectUtils;
 
 import java.io.File;
 import java.lang.reflect.Array;

@@ -1,4 +1,4 @@
-package com.lxk.classloaderdemo.test;
+package com.lxk.hotfixdemo.test;
 
 /**
  * @author xiaoke.luo@tcl.com 2019/9/19 17:14

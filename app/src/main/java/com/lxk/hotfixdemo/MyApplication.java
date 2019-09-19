@@ -1,10 +1,10 @@
-package com.lxk.classloaderdemo;
+package com.lxk.hotfixdemo;
 
 import android.content.Context;
 
 import androidx.multidex.MultiDexApplication;
 
-import com.lxk.classloaderdemo.test.FixDexUtils;
+import com.lxk.hotfixdemo.test.FixDexUtils;
 
 /**
  * @author https://github.com/103style

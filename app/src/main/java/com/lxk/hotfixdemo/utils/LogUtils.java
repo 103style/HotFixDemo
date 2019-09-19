@@ -1,8 +1,8 @@
-package com.lxk.classloaderdemo.utils;
+package com.lxk.hotfixdemo.utils;
 
 import android.util.Log;
 
-import com.lxk.classloaderdemo.BuildConfig;
+import com.lxk.hotfixdemo.BuildConfig;
 
 
 /**

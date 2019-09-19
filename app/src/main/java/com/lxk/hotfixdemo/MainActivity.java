@@ -1,4 +1,4 @@
-package com.lxk.classloaderdemo;
+package com.lxk.hotfixdemo;
 
 import android.content.Context;
 import android.content.res.AssetManager;
@@ -8,7 +8,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.lxk.classloaderdemo.test.MyConstants;
+import com.lxk.hotfixdemo.test.MyConstants;
 
 import java.io.File;
 import java.io.FileOutputStream;

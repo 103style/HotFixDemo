@@ -1,4 +1,4 @@
-package com.lxk.classloaderdemo.test;
+package com.lxk.hotfixdemo.test;
 
 import android.content.Context;
 
