@@ -11,9 +11,9 @@ HotFix demo base on Classloader
 ---
 
 ### 效果图
-![修复之前](https://github.com/103style/HotFixDemo/tree/master/pic/bug.web)
+![修复之前](https://github.com/103style/HotFixDemo/tree/master/pic/bug.png)
 
-![修复之后](https://github.com/103style/HotFixDemo/tree/master/pic/fixed.web)
+![修复之后](https://github.com/103style/HotFixDemo/tree/master/pic/fixed.png)
 
 ---
 
