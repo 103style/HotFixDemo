@@ -2,7 +2,6 @@ package com.lxk.hotfixdemo;
 
 import android.content.Context;
 
-import com.lxk.hotfixdemo.test.MyConstants;
 import com.lxk.hotfixdemo.utils.ReflectUtils;
 
 import java.io.File;
@@ -17,17 +16,24 @@ import dalvik.system.DexClassLoader;
  * @date 2019/9/19 13:52
  */
 public class FixDemo {
+
+    public static String DEX_DIR = "odex";
+
+    private File odexDir;
+
+    /**
+     * 开始替换dex
+     */
     public void loadFixedDex(Context context) {
         if (null == context) {
             return;
         }
         //遍历所有的修复的dex
-        File fileDir = context.getDir(MyConstants.DEX_DIR, Context.MODE_PRIVATE);
-        File[] listFiles = fileDir.listFiles();
+        odexDir = context.getDir(DEX_DIR, Context.MODE_PRIVATE);
+        File[] listFiles = odexDir.listFiles();
         if (listFiles == null) {
             return;
         }
-
         HashSet<File> loadedDex = new HashSet<>();
         for (File file : listFiles) {
             if (file.getName().startsWith("classes") || file.getName().endsWith(".dex")) {
@@ -35,14 +41,16 @@ public class FixDemo {
                 loadedDex.add(file);
             }
         }
-        //dex合并之前的dex
-        doDexInject(context, fileDir, loadedDex);
+        //dex合并
+        doDexInject(context, loadedDex);
     }
 
-
-    private void doDexInject(Context appContext, File filesDir, HashSet<File> loadedDex) {
+    /**
+     * dex 合并
+     */
+    private void doDexInject(Context appContext, HashSet<File> loadedDex) {
         try {
-            String filesDirPath = filesDir.getAbsolutePath() + File.separator + "opt_dex";
+            String filesDirPath = odexDir.getAbsolutePath() + File.separator + "opt_dex";
             File fopt = new File(filesDirPath);
             if (!fopt.exists()) {
                 fopt.mkdir();

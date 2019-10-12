@@ -17,7 +17,7 @@ public class ReflectUtils {
      * @param obj  类实例
      * @param name 变量名
      */
-    public static Field getClassField(Object obj, String name) {
+    public static Object getClassField(Object obj, String name) {
         LogUtils.d(TAG, "getClassField(Object obj, String name)");
         if (obj == null) {
             LogUtils.e(TAG, "obj is null ");
@@ -25,8 +25,12 @@ public class ReflectUtils {
         }
         LogUtils.d(TAG, "Object class name  = " + obj.getClass().getName() + ", name = " + name);
         try {
-            return obj.getClass().getDeclaredField(name);
+            Field field = obj.getClass().getDeclaredField(name);
+            field.setAccessible(true);
+            return field.get(obj);
         } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
         return null;

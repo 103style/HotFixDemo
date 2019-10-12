@@ -4,7 +4,6 @@ import android.content.Context;
 
 import androidx.multidex.MultiDexApplication;
 
-import com.lxk.hotfixdemo.test.FixDexUtils;
 
 /**
  * @author https://github.com/103style
@@ -15,6 +14,6 @@ public class MyApplication extends MultiDexApplication {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
-       FixDexUtils.loadFixedDex(base);
+        new FixDemo().loadFixedDex(base);
     }
 }

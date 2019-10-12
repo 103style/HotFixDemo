@@ -8,8 +8,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.lxk.hotfixdemo.test.MyConstants;
-
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -20,8 +18,6 @@ import java.io.InputStream;
  * @date 2019/9/19 13:34
  */
 public class MainActivity extends AppCompatActivity {
-
-
     private TextView bugTv;
     private int i = 10;
     private int a = 0;
@@ -47,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void moveDex(String name) {
         //目录 data/data/packageName/odex
-        File fileDir = getDir(MyConstants.DEX_DIR, Context.MODE_PRIVATE);
+        File fileDir = getDir(FixDemo.DEX_DIR, Context.MODE_PRIVATE);
         AssetManager am = getResources().getAssets();
         try {
             InputStream is = am.open(name);
